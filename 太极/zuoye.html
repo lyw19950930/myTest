@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			#Canvas{
+				display: block;
+				border: solid 1px black;
+				margin: 0px auto;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<canvas id="Canvas" width="800px" height="600px"></canvas>
+		
+		<script type="text/javascript">
+		
+			function draw () {
+				var can = document.querySelector("#Canvas");
+			var con = can.getContext("2d");
+			//画大圆
+			con.beginPath();
+			con.arc(400,300,200,Math.PI*0.5,Math.PI*1.5,true);
+			con.fill();
+			con.stroke();
+			
+			con.beginPath();
+			con.fillStyle = "white";
+			con.arc(400,300,200,Math.PI*0.5,Math.PI*1.5,false);
+			con.fill();
+			con.stroke();
+			
+			//画小半圆
+			con.beginPath();
+			con.fillStyle = "#000000"
+			con.arc(400,200,100,Math.PI*0.5,Math.PI*1.5,false);
+			con.fill();
+			con.stroke();
+			
+			con.beginPath();
+			con.fillStyle = "white";
+			con.arc(400,400,100,Math.PI*0.5,Math.PI*1.5,true);
+			con.fill();
+			con.stroke();
+			
+			//画最小圆
+			con.beginPath();
+			con.fillStyle = "white";
+			con.arc(400,200,20,0,Math.PI*2,false);
+			con.fill();
+			con.stroke();
+			
+			con.beginPath();
+			con.fillStyle = "#000000";
+			con.arc(400,400,20,0,Math.PI*2,true);
+			con.fill();
+			con.stroke();
+			}
+			draw();
+			
+		</script>
+	</body>
+</html>
