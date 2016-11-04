@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="lib/jquery.fullpage.css"/>
+		<script src="lib/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery.fullpage.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#box1{
+				background: url(img/section1.jpg);
+			}
+			#box2{
+				background: url(img/section2.jpg);
+			}
+			#box3{
+				background: url(img/section5.jpg);
+			}
+			#box4{
+				background: url(img/section10.jpg);
+			}
+			h1{
+				color: red;
+				position: absolute;
+				left: 50%;
+			}
+			#menu{
+				position: fixed;
+				z-index: 2;				
+			}
+			#menu li{
+				list-style-type: none;
+				display: inline-block;
+				
+			}
+			#menu a{
+				text-decoration: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="menu">
+			<li data-menuachor="first"><a href="#first">第一个</a></li>
+			<li data-menuachor="second"><a href="#second">第二个</a></li>
+			<li data-menuachor="third"><a href="#third">第三个</a></li>
+			<li data-menuachor="fourth"><a href="#fourth">第四个</a></li>
+		</ul>
+		<div class="container">
+			<div class="section" id="box1">
+				<h1>第一个</h1>
+			</div>
+			<div class="section" id="box2">
+				<h1>第二个</h1>
+			</div>
+			<div class="section" id="box3">
+				<h1>第三个</h1>
+			</div>
+			<div class="section" id="box4">
+				<h1>第四个</h1>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function () {
+				$(".container").fullpage({
+					navigation:'true',
+					navigationPosition:'right',
+					navigationColor:"red",
+//					verticalCentered:false,
+					menu:"#menu",
+					anchors:["first","second","third","fourth"],
+					scrollingSpeed:700,
+				})
+			})
+			
+		</script>
+	</body>
+</html>
